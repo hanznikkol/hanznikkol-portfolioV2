@@ -1,72 +1,79 @@
 'use client'
 
 import Image from 'next/image'
-import { Button } from '@/components/ui/button'
 import { FileText, ArrowUpRight } from 'lucide-react'
 import GithubIcon from '@iconify-react/mdi/github';
+import FlagPhilippinesIcon from '@iconify-react/twemoji/flag-philippines';
 
 export default function HeroCard() {
   return (
-    <div className="flex h-full min-h-[200px] items-center justify-between rounded-2xl border border-white/10 bg-[#111111] p-6">
-      <div className="flex flex-col gap-3">
+    <div className="relative flex min-h-72 items-center justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#0e0e0e] p-6">
+
+      {/* glow */}
+      <div className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 rounded-full bg-blue-500/10 blur-3xl" />
+
+      {/* LEFT CONTENT */}
+      <div className="relative flex flex-col gap-4">
+
         <div>
-          <p className="font-mono text-xs tracking-widest text-white/40 uppercase">
-            Available for work
-          </p>
-          <h1 className="mt-1 text-4xl font-semibold tracking-tight text-white lg:text-5xl">
-            Hanz Nikkol
+          <h1 className="text-4xl font-semibold tracking-tight text-white lg:text-5xl">
+            Hanz Nikkol Maas
           </h1>
-          <p className="mt-1 text-base text-white/50">
-            Frontend Developer · Lucena City, PH
+          <p className="mt-1.5 text-sm text-white/40 flex items-center gap-2">
+            Developer · Lucena City, PH
+            <FlagPhilippinesIcon height="1em" />
           </p>
         </div>
-        <p className="max-w-sm text-sm text-white/40">
+
+        <p className="max-w-xs text-sm leading-relaxed text-white/40">
           Building clean interfaces and shipping real products.
         </p>
+
         <div className="flex gap-2">
-         <Button
-            variant="outline"
-            size="sm"
-            className="rounded-xl border-white/10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white"
-            >
-            <a
-                href="https://github.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className='flex gap-2 items-center'
-            >
-                <GithubIcon height='32'/>
-                GitHub
-            </a>
-            </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            className="flex rounded-xl border-white/10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white"
+          <a
+            href="https://github.com/hanznikkol"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/60 transition-colors hover:bg-white/10 hover:text-white"
           >
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className='flex items-center'>
-              <FileText className="mr-1.5 h-3.5 w-3.5" />
-              Resume
-              <ArrowUpRight className="ml-1 h-3 w-3" />
-            </a>
-          </Button>
+            <GithubIcon height="1.5em" />
+            GitHub
+          </a>
+
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/60 transition-colors hover:bg-white/10 hover:text-white"
+          >
+            <FileText className="h-3.5 w-3.5" />
+            Resume
+            <ArrowUpRight className="h-3 w-3" />
+          </a>
         </div>
       </div>
 
-      {/* Avatar */}
-      <div className="relative hidden shrink-0 md:block">
-        <div className="h-24 w-24 overflow-hidden rounded-2xl border border-white/10 lg:h-28 lg:w-28">
-          <Image
-            src="/avatar.jpg"
-            alt="Hanz Nikkol"
-            width={112}
-            height={112}
-            className="h-full w-full object-cover"
-          />
+      {/* AVATAR */}
+      <div className="absolute top-5 right-5 md:static md:block shrink-0">
+        <div className="relative">
+          <div className="absolute inset-0 scale-110 rounded-2xl bg-blue-500/10 blur-xl" />
+
+          <div className="relative h-14 w-14 overflow-hidden rounded-xl border border-white/10 md:h-24 md:w-24 lg:h-28 lg:w-28">
+            <Image
+              src="/avatar.jpg"
+              alt="Hanz Nikkol"
+              width={112}
+              height={112}
+              className="h-full w-full object-cover"
+            />
+          </div>
+
+          <span className="absolute -bottom-1 -right-1 flex h-3.5 w-3.5 items-center justify-center rounded-full border border-black bg-emerald-500 md:h-4 md:w-4">
+            <span className="h-1.5 w-1.5 animate-ping rounded-full bg-emerald-300 opacity-75" />
+          </span>
         </div>
-        <span className=" animate-pulse absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full border border-black bg-emerald-500">
-        </span>
       </div>
+      
     </div>
   )
 }

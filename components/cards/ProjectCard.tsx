@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import ProjectModal from './ProjectModal'
+import ProjectModal from '../modals/ProjectModal'
 import type { Project } from '@/data/projects'
 import { ArrowUpRight } from 'lucide-react'
 
@@ -36,7 +36,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <Badge
                 key={t}
                 variant="outline"
-                className="rounded-md border-white/[0.07] bg-white/[0.04] px-1.5 py-0 text-[10px] text-white/40"
+                className="rounded-md border-white/[0.07] bg-white/4 px-1.5 py-0 text-[10px] text-white/40"
               >
                 {t}
               </Badge>
@@ -44,7 +44,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {project.tech.length > 3 && (
               <Badge
                 variant="outline"
-                className="rounded-md border-white/[0.07] bg-white/[0.04] px-1.5 py-0 text-[10px] text-white/30"
+                className="rounded-md border-white/[0.07] bg-white/4 px-1.5 py-0 text-[10px] text-white/30"
               >
                 +{project.tech.length - 3}
               </Badge>

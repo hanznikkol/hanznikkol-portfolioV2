@@ -5,16 +5,9 @@ export default function AboutCard() {
         About
       </p>
       <div className="mt-4 space-y-2 text-sm leading-relaxed text-white/60">
-        <p>
-          Magna Cum Laude IT grad. Former instructor turned developer.
-        </p>
-        <p>
-          I build full-stack products — from auth flows to UI systems — with
-          a bias for shipping.
-        </p>
-        <p>
-          Currently deep in Next.js, TypeScript, and Supabase.
-        </p>
+        <p>I build modern web applications with a focus on clarity, usability, and performance. </p>
+        <p> I enjoy turning ideas into simple, functional interfaces and improving them through iteration.</p>
+        <p> Currently working with Next.js, TypeScript, and Supabase. </p>
       </div>
     </div>
   )

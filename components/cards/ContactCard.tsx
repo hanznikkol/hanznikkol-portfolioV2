@@ -1,47 +1,141 @@
+'use client'
+
 import { Button } from '@/components/ui/button'
-import { Mail } from 'lucide-react'
+import { Mail, FileText } from 'lucide-react'
+
+import FacebookIcon from '@iconify-react/devicon/facebook'
+import InstagramIcon from '@iconify-react/skill-icons/instagram'
+import LinkedinIcon from '@iconify-react/devicon/linkedin'
+import GithubIcon from '@iconify-react/mdi/github'
+import TiktokIcon from '@iconify-react/logos/tiktok-icon';
 
 export default function ContactCard() {
+
+  const socials = [
+      { icon: FacebookIcon, href: 'https://www.facebook.com/hanznikkolbabatmaas/' },
+      { icon: InstagramIcon, href: 'https://www.instagram.com/iamnikkol_/' },
+      { icon: TiktokIcon, href: 'https://www.tiktok.com/@iamnikkol_'}
+  ]
+
   return (
-    <div className="flex flex-col items-start justify-between gap-4 rounded-2xl border border-white/10 bg-[#111111] p-6 sm:flex-row sm:items-center">
-      <div>
-        <p className="font-mono text-xs tracking-widest text-white/30 uppercase">
-          Contact
-        </p>
-        <p className="mt-1 text-sm text-white/50">
-          Open for internships &amp; junior roles ·{' '}
-          <span className="text-emerald-400/80">Available now</span>
-        </p>
-      </div>
-      <div className="flex gap-2">
-        <Button
-          variant="outline"
-          size="sm"
-          className="rounded-xl border-white/10 bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"
-        >
-          <a href="mailto:your@email.com">
-            <Mail className="mr-1.5 h-3.5 w-3.5" />
-            Email
-          </a>
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          className="rounded-xl border-white/10 bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"
-        >
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          className="rounded-xl border-white/10 bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"
-        >
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a>
-        </Button>
+    <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-[#111111] p-6">
+
+      {/* MAIN LAYOUT */}
+      <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr_0.9fr]">
+
+        {/* INTRO */}
+        <div>
+          <p className="font-mono text-xs uppercase tracking-widest text-white/30">
+            Contact
+          </p>
+
+          <p className="mt-2 text-sm leading-relaxed text-white/70">
+            Open for freelance work, collaborations, internships,
+            and developer opportunities.
+          </p>
+        </div>
+
+        {/* PROFESSIONAL CONTACTS */}
+        <div>
+          <p className="mb-3 text-[10px] uppercase tracking-[0.2em] text-white/30">
+            Professional
+          </p>  
+
+          <div className="flex flex-col gap-2">
+
+            <Button
+              variant="outline"
+              size="sm"
+              className="justify-start rounded-xl border-white/10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white"
+            >
+              <a
+                href="mailto:hanznikkolmaas@gmail.com"
+                className="flex items-center gap-2"
+              >
+                <Mail className="h-4 w-4" />
+                hanznikkolmaas@gmail.com
+              </a>
+            </Button>
+
+            <Button
+              variant="outline"
+              size="sm"
+              className="justify-start rounded-xl border-white/10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white"
+            >
+              <a
+                href="https://www.linkedin.com/in/hanznikkol"
+                target="_blank"
+                className="flex items-center gap-2"
+              >
+                <LinkedinIcon className="h-4 w-4" />
+                LinkedIn
+              </a>
+            </Button>
+
+            <Button
+              variant="outline"
+              size="sm"
+              className="justify-start rounded-xl border-white/10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white"
+            >
+              <a
+                href="https://github.com/hanznikkol"
+                target="_blank"
+                className="flex items-center gap-2"
+              >
+                <GithubIcon className="h-4 w-4" />
+                GitHub
+              </a>
+            </Button>
+
+            <Button
+              variant="outline"
+              size="sm"
+              className="justify-start rounded-xl border-white/10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white"
+            >
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                className="flex items-center gap-2"
+              >
+                <FileText className="h-4 w-4" />
+                Resume
+              </a>
+            </Button>
+
+          </div>
+        </div>
+
+        {/* SOCIALS */}
+        <div>
+          <p className="mb-3 text-[10px] uppercase tracking-[0.2em] text-white/30">
+            Socials
+          </p>
+
+          <div className="flex flex-wrap gap-2">
+
+            {socials.map(({ icon: Icon, href }) => (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  flex h-10 w-10 items-center justify-center
+                  rounded-xl border border-white/10
+                  bg-white/5 text-white/60
+                  transition-all duration-200
+                  hover:border-white/20
+                  hover:bg-white/10
+                  hover:text-white
+                "
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            ))}
+
+          </div>
+        </div>
+
       </div>
     </div>
   )
