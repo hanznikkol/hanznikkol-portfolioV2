@@ -9,14 +9,18 @@ export interface Project {
   tech: string[]
   accentColor: string
   github?: string
+  figma?: string
   liveUrl?: string
+  status?: 'developing' | 'finished'
+  preview?: string,
+  images?: string[]
 }
 
 export const projects: Project[] = [
   {
     id: 'spontee',
     title: 'Spontee',
-    year: '2024',
+    year: '2026',
     shortDescription: 'Real-time group decision app for couples & friends.',
     fullDescription:
       'Spontee solves the "where should we go?" paralysis. Rooms are created, members swipe on options, and the engine surfaces the best match in real-time. Built with a phase system: lobby → voting → result.',
@@ -26,76 +30,69 @@ export const projects: Project[] = [
       'Real-time result aggregation',
       'Supabase Realtime for live sync',
     ],
-    challenges:
-      'Stale closure bug in the swipe handler — fixed by using a ref to hold mutable voting state outside the closure.',
     tech: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind'],
     accentColor: '#6ee7b7',
-    github: 'https://github.com/yourusername/spontee',
-  },
-  {
-    id: 'classpulse',
-    title: 'ClassPulse AI',
-    year: '2024',
-    shortDescription: 'Full SaaS boilerplate with warm editorial design system.',
-    fullDescription:
-      'Production-ready SaaS starter — Next.js 14, TypeScript, Tailwind, Supabase. Includes complete auth pages, reusable component library, PostgreSQL schema with RLS policies, and a custom warm editorial design system.',
-    features: [
-      'Auth flow (sign up, sign in, forgot password)',
-      'Custom design tokens & component library',
-      'Supabase RLS policy setup',
-      'PostgreSQL schema scaffolding',
-    ],
-    tech: ['Next.js 14', 'TypeScript', 'Supabase', 'Tailwind'],
-    accentColor: '#fbbf24',
-    github: 'https://github.com/yourusername/classpulse',
-  },
-  {
-    id: 'conquest',
-    title: 'ConQuest',
-    year: '2023',
-    shortDescription: 'Gamified quiz platform for classroom engagement.',
-    fullDescription:
-      'A gamified classroom quiz platform with real-time leaderboards, question banks, and session management. Designed for projected classroom use with accessible typography and high contrast.',
-    features: [
-      'Live leaderboard updates',
-      'Question bank management',
-      'Teacher dashboard for session control',
-      'Optimized for projector readability',
-    ],
-    tech: ['React', 'Node.js', 'Socket.io', 'PostgreSQL'],
-    accentColor: '#a78bfa',
-    github: 'https://github.com/yourusername/conquest',
+    github: 'https://github.com/hanznikkol/spontee',
+    status: 'developing',
+    preview: '/gallery/projects/spontee/spontee-preview.png'
   },
   {
     id: 'oneflow',
     title: 'ONEFlow',
-    year: '2023',
-    shortDescription: 'Unified task and workflow management dashboard.',
+    year: '2024',
+    shortDescription: 'Web-based self-service kiosk queue management system',
     fullDescription:
-      'ONEFlow consolidates task tracking, workflow stages, and team status into a single dashboard. Emphasis on scan-ability — everything visible without drilling down.',
+      'ONEFlow is a Queue Management System (QMS) designed for STI College Lucena that streamlines student transactions in the Cashier, Registrar, and Admissions departments. It introduces a self-service kiosk for queue registration, SMS notifications for queue updates, QR-based ticket tracking, and a real-time display dashboard to improve customer flow, reduce waiting inefficiencies, and enhance overall service experience.',
     features: [
-      'Kanban + list view toggle',
-      'Workflow stage editor',
-      'Activity log per task',
+      'Self-service kiosk for queue registration',
+      'Department-based and transaction-type selection',
+      'SMS notifications for queue status updates',
+      'QR code ticket tracking via web app',
+      'Real-time queue display dashboard',
+      'Paperless or printed ticket options',
+      'First-come-first-served queue system'
     ],
-    tech: ['React', 'TypeScript', 'Tailwind', 'REST API'],
+    tech: [
+      'Vue',
+      'Javascript',
+      'Tailwind',
+      'Node.js',
+      'IoT Integration',
+      'REST API',
+    ],
+
     accentColor: '#38bdf8',
-    github: 'https://github.com/yourusername/oneflow',
+    github: 'https://github.com/randalllegend/oneflow',
+    status: 'finished',
+    preview: '/gallery/projects/ONEFlow/oneflow-preview.png',
+    images: [
+      '/gallery/projects/ONEFlow/image1.png',
+      '/gallery/projects/ONEFlow/image2.png',
+      '/gallery/projects/ONEFlow/image3.png',
+    ]
   },
   {
-    id: 'healthme',
-    title: 'HealthMe',
-    year: '2023',
-    shortDescription: 'Personal health tracking with symptom logging.',
-    fullDescription:
-      'A lightweight health tracker focused on daily symptom logging, hydration, and medication reminders. Mobile-first design with offline-first capability via localStorage.',
+    id: 'conquest',
+    title: 'ConQuest',
+    year: '2025',
+    shortDescription: 'Gamified quest platform that turns goals into interactive challenges.',
+    fullDescription:'ConQuest is a gamified web platform where users complete quests, earn badges, and track progress through a reward-based system. It features team collaboration, achievement tracking, and an engaging UI designed to turn tasks and goals into an adventure experience.',
     features: [
-      'Symptom log with severity scale',
-      'Medication reminder system',
-      'Weekly health summary export',
+      'Quest-based task and challenge system',
+      'Badge and achievement collection',
+      'Real-time progress tracking',
+      'Team collaboration and engagement features',
+      'Interactive and modern gamified UI',
     ],
-    tech: ['React', 'Tailwind', 'localStorage', 'PWA'],
-    accentColor: '#f472b6',
-    github: 'https://github.com/yourusername/healthme',
+    tech: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind'],
+    accentColor: '#06b6d4',
+    github: 'https://github.com/randallegend/quest',
+    preview: '/gallery/projects/ConQuest/quest-preview.png',
+    images: [
+      '/gallery/projects/ConQuest/image1.png',
+      '/gallery/projects/ConQuest/image2.png',
+      '/gallery/projects/ConQuest/image3.png',
+    ],
+    figma: 'https://www.figma.com/design/ip4n30Kp26jErA1Y9GDBm7/OpenIT-Codefest?node-id=0-1&p=f&t=0ruqSEga0K4LHg2p-0'
   },
 ]

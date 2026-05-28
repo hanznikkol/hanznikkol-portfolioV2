@@ -2,9 +2,9 @@ import { projects } from "@/data/projects";
 import AboutCard from "./AboutCard";
 import ContactCard from "./ContactCard";
 import HeroCard from "./HeroCard";
-import ProjectCard from "./ProjectCard";
 import SkillsCard from "./SkillsCard";
 import GalleryCard from "./GalleryCard";
+import ProjectsSlider from "./ProjectSlider";
 
 export default function BentoGrid() {
   return (
@@ -22,7 +22,7 @@ export default function BentoGrid() {
       </div>
 
       {/* Middle row */}
-      <div className="mt-3 grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-4 items-stretch">
+      <div className="mt-3 grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-4 items-stretch md:min-h-80">
         <div className="col-span-1 h-full">
           {/* Skills */}
           <div className="h-full">
@@ -32,12 +32,8 @@ export default function BentoGrid() {
         </div>
 
         {/* Projects */}
-        <div className="md:col-span-2 lg:col-span-3">
-          <div className="grid h-full grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
+        <div className="md:col-span-2 lg:col-span-3 h-full">
+          <ProjectsSlider projects={projects}/>
         </div>
       </div>
 

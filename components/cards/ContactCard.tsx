@@ -18,7 +18,7 @@ export default function ContactCard() {
   ]
 
   return (
-    <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-[#111111] p-6">
+    <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-[#111111] p-6 w-full">
 
       {/* MAIN LAYOUT */}
       <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr_0.9fr]">
@@ -42,65 +42,42 @@ export default function ContactCard() {
           </p>  
 
           <div className="flex flex-col gap-2">
-
-            <Button
-              variant="outline"
-              size="sm"
-              className="justify-start rounded-xl border-white/10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white"
+            <a
+              href="mailto:hanznikkolmaas@gmail.com"
+              className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-2 py-1.5 text-xs text-white/70 transition hover:bg-white/10 hover:text-white"
             >
-              <a
-                href="mailto:hanznikkolmaas@gmail.com"
-                className="flex items-center gap-2"
-              >
-                <Mail className="h-4 w-4" />
-                hanznikkolmaas@gmail.com
-              </a>
-            </Button>
+              <Mail className="h-4 w-4" />
+              Email
+            </a>
 
-            <Button
-              variant="outline"
-              size="sm"
-              className="justify-start rounded-xl border-white/10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white"
+            <a
+              href="https://www.linkedin.com/in/hanznikkol"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-2 py-1.5 text-xs text-white/70 transition hover:bg-white/10 hover:text-white"
             >
-              <a
-                href="https://www.linkedin.com/in/hanznikkol"
-                target="_blank"
-                className="flex items-center gap-2"
-              >
-                <LinkedinIcon className="h-4 w-4" />
-                LinkedIn
-              </a>
-            </Button>
+              <LinkedinIcon className="h-4 w-4" />
+              LinkedIn
+            </a>
 
-            <Button
-              variant="outline"
-              size="sm"
-              className="justify-start rounded-xl border-white/10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white"
+            <a
+              href="https://github.com/hanznikkol"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-2 py-1.5 text-xs text-white/70 transition hover:bg-white/10 hover:text-white"
             >
-              <a
-                href="https://github.com/hanznikkol"
-                target="_blank"
-                className="flex items-center gap-2"
-              >
-                <GithubIcon className="h-4 w-4" />
-                GitHub
-              </a>
-            </Button>
+              <GithubIcon className="h-4 w-4" />
+              GitHub
+            </a>
 
-            <Button
-              variant="outline"
-              size="sm"
-              className="justify-start rounded-xl border-white/10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white"
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-2 py-1.5 text-xs text-white/70 transition hover:bg-white/10 hover:text-white"
             >
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                className="flex items-center gap-2"
-              >
-                <FileText className="h-4 w-4" />
-                Resume
-              </a>
-            </Button>
+              <FileText className="h-4 w-4" />
+              Resume
+            </a>
 
           </div>
         </div>
