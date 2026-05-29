@@ -11,18 +11,18 @@ export async function POST(req: Request) {
         Authorization: `Bearer ${process.env.GROQ_API_KEY}`
         },
         body: JSON.stringify({
-        model: 'llama-3.1-8b-instant',
-        messages: [
-            {
-            role: 'system',
-            content: portfolioContext
-            },
-            {
-            role: 'user',
-            content: message
-            }
-        ],
-        temperature: 0.7
+            model: 'llama-3.1-8b-instant',
+            messages: [
+                {
+                    role: 'system',
+                    content: portfolioContext
+                },
+                {
+                    role: 'user',
+                    content: message
+                }
+            ],
+            temperature: 0.7
         })
     })
 

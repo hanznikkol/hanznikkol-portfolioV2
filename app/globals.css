@@ -31,7 +31,6 @@ body {
 } 
 
 /* Custom Scrollbar */
-/* Modern thin scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
 }
