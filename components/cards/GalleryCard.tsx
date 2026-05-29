@@ -43,6 +43,7 @@ export default function GalleryCard() {
           loop
           navigation={{
             nextEl: ".gallery-next",
+            prevEl: ".gallery-prev"
           }}
           className="w-full"
         >

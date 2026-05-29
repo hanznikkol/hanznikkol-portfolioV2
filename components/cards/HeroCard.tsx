@@ -77,7 +77,7 @@ export default function HeroCard() {
       </div>
 
       {/* AVATAR */}
-      <div className="absolute top-5 right-5 md:static md:block shrink-0">
+      <div className="relative shrink-0 self-end md:self-auto">
         <div className="relative">
           <div className="absolute inset-0 scale-110 rounded-2xl bg-blue-500/10 blur-xl" />
 
