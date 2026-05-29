@@ -1,8 +1,5 @@
 'use client'
-
-import { Button } from '@/components/ui/button'
 import { Mail, FileText } from 'lucide-react'
-
 import FacebookIcon from '@iconify-react/devicon/facebook'
 import InstagramIcon from '@iconify-react/skill-icons/instagram'
 import LinkedinIcon from '@iconify-react/devicon/linkedin'

@@ -55,8 +55,8 @@ export default function GalleryCard() {
                 <Image
                   src={src}
                   alt={`gallery ${i + 1}`}
-                  width={200}
-                  height={200}
+                  width={600}
+                  height={600}
                   className="h-full w-full object-cover hover:scale-110 transition-transform duration-300"
                 />
               </div>
