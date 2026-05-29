@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { MessageCircle, X, Send } from 'lucide-react'
 import { sendChatMessage } from '@/lib/chat'
@@ -9,6 +9,9 @@ function FloatingChat() {
   const [open, setOpen] = useState(false)
   const [input, setInput] = useState('')
   const [typing, setTyping] = useState(false)
+  const [showScrollButton, setShowScrollButton] = useState(false)
+  const messagesEndRef = useRef<HTMLDivElement | null>(null)
+  const containerRef = useRef<HTMLDivElement | null>(null)
   const [messages, setMessages] = useState([
     {
       role: 'ai',
@@ -44,6 +47,24 @@ function FloatingChat() {
     }
 
     setTyping(false)
+  }
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  useEffect(() => {
+    scrollToBottom()
+  }, [messages, typing])
+
+  const handleScroll = () => {
+    const el = containerRef.current
+    if (!el) return
+
+    const isNearBottom =
+      el.scrollHeight - el.scrollTop - el.clientHeight < 80
+
+    setShowScrollButton(!isNearBottom)
   }
 
   return (
@@ -97,7 +118,7 @@ function FloatingChat() {
           </div>
 
           {/* MESSAGES */}
-          <div className="flex-1 max-h-80 space-y-3 overflow-y-auto p-3">
+          <div ref={containerRef} onScroll={handleScroll} className="flex-1 max-h-80 space-y-3 overflow-y-auto p-3 custom-scrollbar">
 
             {messages.map((msg, i) => (
               <div
