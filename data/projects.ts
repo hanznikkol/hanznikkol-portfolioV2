@@ -63,6 +63,7 @@ export const projects: Project[] = [
 
     accentColor: '#38bdf8',
     github: 'https://github.com/randalllegend/oneflow',
+    figma: 'https://www.figma.com/design/If7gAiGoNhnNvYyWwZHkf3/Capstone-ONEFlow?t=iopeMyeS2LV7CTTO-0',
     status: 'finished',
     preview: '/gallery/projects/ONEFlow/oneflow-preview.png',
     images: [

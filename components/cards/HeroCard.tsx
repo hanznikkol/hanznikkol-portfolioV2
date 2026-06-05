@@ -8,8 +8,7 @@ import FlagPhilippinesIcon from '@iconify-react/twemoji/flag-philippines';
 
 export default function HeroCard() {
   return (
-    <div className="relative flex min-h-72 h-full items-center justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#0e0e0e] p-6">
-
+    <div className="relative flex flex-col h-full sm:flex-row gap-6 sm:items-center sm:justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#0e0e0e] p-4 sm:p-6">
       {/* glow */}
       <div className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 rounded-full bg-blue-500/10 blur-3xl" />
 
@@ -30,13 +29,14 @@ export default function HeroCard() {
           Building clean interfaces and shipping real products.
         </p>
 
-        <div className="flex gap-2">
+        {/* Buttons */}
+        <div className="flex flex-wrap gap-2">
           <a
             href="mailto:hanznikkolmaas@gmail.com"
             className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl px-4 py-2 text-xs font-medium text-black transition"
           >
             {/* glow background */}
-            <span className="absolute inset-0 bg-gradient-to-r from-white via-white to-white/80" />
+            <span className="absolute inset-0 bg-linear-to-r from-white via-white to-white/80" />
 
             {/* subtle hover sheen */}
             <span className="absolute -left-full top-0 h-full w-full bg-white/40 transition-all duration-500 group-hover:left-full" />
@@ -77,24 +77,27 @@ export default function HeroCard() {
       </div>
 
       {/* AVATAR */}
-      <div className="relative shrink-0 self-end md:self-auto">
-        <div className="relative">
-          <div className="absolute inset-0 scale-110 rounded-2xl bg-blue-500/10 blur-xl" />
+      <div className="relative h-16 w-16 sm:h-24 sm:w-24 lg:h-28 lg:w-28">
+  
+        {/* glow */}
+        <div className="absolute inset-0 scale-110 rounded-2xl bg-blue-500/10 blur-xl" />
 
-          <div className="relative h-14 w-14 overflow-hidden rounded-xl border border-white/10 md:h-24 md:w-24 lg:h-28 lg:w-28">
-            <Image
-              src="/avatar.jpg"
-              alt="Hanz Nikkol"
-              width={112}
-              height={112}
-              className="h-full w-full object-cover"
-            />
-          </div>
-
-          <span className="absolute -bottom-1 -right-1 flex h-3.5 w-3.5 items-center justify-center rounded-full border border-black bg-emerald-500 md:h-4 md:w-4">
-            <span className="h-1.5 w-1.5 animate-ping rounded-full bg-emerald-300 opacity-75" />
-          </span>
+        {/* image */}
+        <div className="relative h-full w-full overflow-hidden rounded-xl border border-white/10">
+          <Image
+            src="/avatar.jpg"
+            alt="Hanz Nikkol"
+            width={112}
+            height={112}
+            className="h-full w-full object-cover"
+          />
         </div>
+
+        {/* online status */}
+        <span className="absolute -bottom-1 -right-1 flex h-3.5 w-3.5 items-center justify-center rounded-full border border-black bg-emerald-500">
+          <span className="h-1.5 w-1.5 animate-ping rounded-full bg-emerald-300 opacity-75" />
+        </span>
+
       </div>
       
     </div>
