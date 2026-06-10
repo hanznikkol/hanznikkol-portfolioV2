@@ -25,7 +25,7 @@ export default function GalleryCard() {
 
         {/* header */}
         <div className="flex items-center justify-between mb-2">
-          <p className="text-[10px] uppercase tracking-widest text-white/40">
+          <p className=" font-mono text-xs uppercase tracking-widest text-white/50 font-bold">
             Gallery
           </p>
 

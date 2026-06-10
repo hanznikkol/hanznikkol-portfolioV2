@@ -20,7 +20,7 @@ export default function ProjectsSlider({
       {/* Header */}
       <div className="mb-5 flex items-center justify-between">
         <div>
-          <h3 className="mt-1 text-lg font-semibold text-white/90">
+          <h3 className="mt-1 text-md font-mono font-bold text-white/50">
             Projects
           </h3>
         </div>

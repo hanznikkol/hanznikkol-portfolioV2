@@ -65,14 +65,6 @@ export default function HeroCard() {
             <GithubIcon height="1.4em" />
           </a>
           
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/60 transition-colors hover:bg-white/10 hover:text-white"
-          >
-            <FileText className="h-3.5 w-3.5" />
-          </a>
         </div>
       </div>
 

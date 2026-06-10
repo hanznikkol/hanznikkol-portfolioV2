@@ -22,7 +22,7 @@ export default function ContactCard() {
 
         {/* INTRO */}
         <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-white/30">
+          <p className="font-mono text-xs uppercase tracking-widest text-white/50 font-bold">
             Contact
           </p>
 
