@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import type { Project } from '@/data/projects'
 import ProjectModal from '../modals/ProjectModal'
+import ProjectStatus from '../sub-components/ProjectStatus'
 
 interface ProjectCardProps {
   project: Project
@@ -16,13 +17,10 @@ export default function ProjectCards({ project }: ProjectCardProps) {
     <div onClick={() => setOpen(true)}
       className="group cursor-pointer relative h-70 overflow-hidden rounded-2xl border border-white/10 bg-black transition-all duration-300 hover:scale-[1.03] hover:border-white/20">
       
-      {/* Project status */}
-      {project.status === 'developing' && (
-        <div className="absolute right-3 top-3 z-10 flex items-center gap-1 rounded-full bg-yellow-500/15 px-2 py-1 text-[10px] text-yellow-300 backdrop-blur">
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-yellow-400" />
-          Developing
-        </div>
-      )}
+      <div className="absolute right-3 top-3 z-20">
+        <ProjectStatus status={project.status!} />
+      </div>
+
 
       {/* Bg preview */}
       <div

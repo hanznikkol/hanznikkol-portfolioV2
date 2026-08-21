@@ -8,6 +8,7 @@ import { Globe, ArrowUpRight, Sparkles, Layers3, Wrench, CalendarDays, CircleDot
 import GithubIcon from '@iconify-react/mdi/github';
 import FigmaIcon from '@iconify-react/devicon/figma'
 import type { Project } from '@/data/projects'
+import ProjectStatus from '../sub-components/ProjectStatus'
 
 interface ProjectModalProps {
   project: Project
@@ -119,23 +120,25 @@ export default function ProjectModal({ project, open, onOpenChange }: ProjectMod
         )}
 
         <div className="relative p-7">
-          <DialogHeader className="space-y-5">
+         <DialogHeader className="space-y-5 w-full">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-
               {/* LEFT CONTENT */}
-              <div className="w-full space-y-3">
-
+              <div className="min-w-0 flex-1 space-y-3">
                 {/* ICON + YEAR */}
                 <div className="flex items-center gap-2">
                   <div
                     className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10"
                     style={{ background: `${project.accentColor}20` }}
                   >
-                    <Rocket className="h-4 w-4" style={{ color: project.accentColor }} />
+                    <Rocket
+                      className="h-4 w-4"
+                      style={{ color: project.accentColor }}
+                    />
                   </div>
 
                   <div className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/3 px-3 py-1">
                     <CalendarDays className="h-3 w-3 text-white/40" />
+
                     <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">
                       {project.year}
                     </span>
@@ -143,31 +146,17 @@ export default function ProjectModal({ project, open, onOpenChange }: ProjectMod
                 </div>
 
                 {/* DESCRIPTION */}
-                <div className="space-y-2">
+                <div className="w-full">
                   <p className="text-sm leading-relaxed text-white/60">
                     {project.fullDescription}
                   </p>
                 </div>
               </div>
 
-              {/* RIGHT STATUS (mobile moves below automatically) */}
+              {/* RIGHT STATUS */}
               <div className="shrink-0">
-                {project.status === 'developing' ? (
-                  <div className="flex items-center gap-2 rounded-full border border-yellow-500/20 bg-yellow-500/10 px-3 py-1.5 text-xs text-yellow-300 backdrop-blur-xl">
-                    <span className="relative flex h-2 w-2">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-yellow-400 opacity-75" />
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-yellow-400" />
-                    </span>
-                    Developing
-                  </div>
-                ) : (
-                  <div className="flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1.5 text-xs text-emerald-300">
-                    <CircleDot className="h-3 w-3 fill-emerald-300" />
-                    Finished
-                  </div>
-                )}
+                <ProjectStatus status={project.status!} />
               </div>
-
             </div>
           </DialogHeader>
 

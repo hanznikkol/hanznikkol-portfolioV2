@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { FileText, ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import GithubIcon from '@iconify-react/mdi/github';
 import LinkedInIcon from '@iconify-react/devicon/linkedin'
 import FlagPhilippinesIcon from '@iconify-react/twemoji/flag-philippines';
@@ -13,13 +13,12 @@ export default function HeroCard() {
       <div className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 rounded-full bg-blue-500/10 blur-3xl" />
 
       {/* LEFT CONTENT */}
-      <div className="relative flex flex-col gap-4">
-
+      <div className="relative flex flex-col items-center gap-4 text-center sm:items-start sm:text-left">
         <div>
           <h1 className="text-4xl font-semibold tracking-tight text-white lg:text-5xl">
             Hanz Nikkol Maas
           </h1>
-          <p className="mt-1.5 text-sm text-white/40 flex items-center gap-2">
+          <p className="mt-1.5 flex items-center justify-center gap-2 text-sm text-white/40 sm:justify-start">
             Developer · Lucena City, PH
             <FlagPhilippinesIcon height="1em" />
           </p>
@@ -42,7 +41,7 @@ export default function HeroCard() {
             <span className="absolute -left-full top-0 h-full w-full bg-white/40 transition-all duration-500 group-hover:left-full" />
 
             <span className="relative flex items-center gap-2">
-              Contact Me
+              Get in touch
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </span>
           </a>
@@ -68,30 +67,24 @@ export default function HeroCard() {
         </div>
       </div>
 
-      {/* AVATAR */}
-      <div className="relative h-16 w-16 sm:h-24 sm:w-24 lg:h-28 lg:w-28">
-  
-        {/* glow */}
-        <div className="absolute inset-0 scale-110 rounded-2xl bg-blue-500/10 blur-xl" />
+    <div className="relative order-first mx-auto h-20 w-20 sm:order-last sm:mx-0 sm:h-24 sm:w-24 lg:h-28 lg:w-28">
+      <div className="absolute inset-0 scale-110 rounded-2xl bg-blue-500/10 blur-xl" />
 
-        {/* image */}
-        <div className="relative h-full w-full overflow-hidden rounded-xl border border-white/10">
-          <Image
-            src="/avatar.jpg"
-            alt="Hanz Nikkol"
-            width={112}
-            height={112}
-            className="h-full w-full object-cover"
-          />
-        </div>
-
-        {/* online status */}
-        <span className="absolute -bottom-1 -right-1 flex h-3.5 w-3.5 items-center justify-center rounded-full border border-black bg-emerald-500">
-          <span className="h-1.5 w-1.5 animate-ping rounded-full bg-emerald-300 opacity-75" />
-        </span>
-
+      <div className="relative h-full w-full overflow-hidden rounded-xl border border-white/10">
+        <Image
+          src="/avatar.jpg"
+          alt="Hanz Nikkol"
+          width={112}
+          height={112}
+          className="h-full w-full object-cover"
+        />
       </div>
-      
+
+      <span className="absolute -bottom-1 -right-1 flex h-3.5 w-3.5 items-center justify-center rounded-full border border-black bg-emerald-500">
+        <span className="h-1.5 w-1.5 animate-ping rounded-full bg-emerald-300 opacity-75" />
+      </span>
+    </div>
+          
     </div>
   )
 }
