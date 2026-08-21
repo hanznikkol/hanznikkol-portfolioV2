@@ -20,9 +20,9 @@ export default function ProjectModal({ project, open, onOpenChange }: ProjectMod
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="no-scrollbar max-h-[92vh] overflow-y-auto overflow-x-hidden border border-white/10 bg-[#0b0b0b] p-0 text-white shadow-2xl shadow-black/40 sm:max-w-4xl">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-24 -right-30 h-72 w-72 rounded-full blur-3xl" style={{ background: `${project.accentColor}25` }} />
-          <div className="absolute -bottom-30 -left-25 h-72 w-72 rounded-full blur-3xl" style={{ background: `${project.accentColor}15` }} />
+        {/* Gradient background */}
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+          <div className="absolute -right-30 -top-24 h-72 w-72 rounded-full blur-3xl" style={{ background: `${project.accentColor}25` }}/>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_35%)]" />
         </div>
 
@@ -119,67 +119,29 @@ export default function ProjectModal({ project, open, onOpenChange }: ProjectMod
           </div>
         )}
 
+        {/* Main */}
         <div className="relative p-7">
-         <DialogHeader className="space-y-5 w-full">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-              {/* LEFT CONTENT */}
-              <div className="min-w-0 flex-1 space-y-3">
-                {/* ICON + YEAR */}
-                <div className="flex items-center gap-2">
-                  <div
-                    className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10"
-                    style={{ background: `${project.accentColor}20` }}
-                  >
-                    <Rocket
-                      className="h-4 w-4"
-                      style={{ color: project.accentColor }}
-                    />
-                  </div>
+          <DialogHeader className="w-full space-y-5">
+            {/* TOP: LEFT + RIGHT */}
+            <div className="flex items-center gap-4">
 
-                  <div className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/3 px-3 py-1">
-                    <CalendarDays className="h-3 w-3 text-white/40" />
-
-                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">
-                      {project.year}
-                    </span>
-                  </div>
-                </div>
-
-                {/* DESCRIPTION */}
-                <div className="w-full">
-                  <p className="text-sm leading-relaxed text-white/60">
-                    {project.fullDescription}
-                  </p>
-                </div>
-              </div>
-
-              {/* RIGHT STATUS */}
+              {/* STATUS */}
               <div className="shrink-0">
                 <ProjectStatus status={project.status!} />
               </div>
+
             </div>
+
+            {/* FULL WIDTH DESCRIPTION */}
+            <div className="w-full">
+              <p className="w-full text-sm leading-relaxed text-white/60">
+                {project.fullDescription}
+              </p>
+            </div>
+
           </DialogHeader>
 
           <div className="mt-8 space-y-8">
-            
-            {/* Key Features */}
-            {project.features?.length > 0 && (
-              <section className="rounded-3xl border border-white/10 bg-white/3 p-5 backdrop-blur-sm">
-                <div className="mb-4 flex items-center gap-2">
-                  <Sparkles className="h-4 w-4" style={{ color: project.accentColor }} />
-                  <h3 className="font-medium text-white">Key Features</h3>
-                </div>
-
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {project.features.map((feature, i) => (
-                    <div key={i} className="group flex items-start gap-3 rounded-2xl border border-white/5 bg-black/20 p-4 transition-all hover:border-white/10 hover:bg-white/[0.04]">
-                      <div className="mt-1 h-2 w-2 rounded-full" style={{ background: project.accentColor }} />
-                      <p className="text-sm leading-relaxed text-white/65 transition-colors group-hover:text-white/90">{feature}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            )}
             
             {/* Images */}
             {project.images && project.images.length > 0 && (
@@ -201,6 +163,27 @@ export default function ProjectModal({ project, open, onOpenChange }: ProjectMod
                 </div>
               </section>
             )}
+            
+            {/* Key Features */}
+            {project.features?.length > 0 && (
+              <section className="rounded-3xl border border-white/10 bg-white/3 p-5 backdrop-blur-sm">
+                <div className="mb-4 flex items-center gap-2">
+                  <Sparkles className="h-4 w-4" style={{ color: project.accentColor }} />
+                  <h3 className="font-medium text-white">Key Features</h3>
+                </div>
+
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {project.features.map((feature, i) => (
+                    <div key={i} className="group flex items-start gap-3 rounded-2xl border border-white/5 bg-black/20 p-4 transition-all hover:border-white/10 hover:bg-white/[0.04]">
+                      <div className="mt-1 h-2 w-2 rounded-full" style={{ background: project.accentColor }} />
+                      <p className="text-sm leading-relaxed text-white/65 transition-colors group-hover:text-white/90">{feature}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+            
+            
 
             {/* Challenges */}
             {project.challenges && (
