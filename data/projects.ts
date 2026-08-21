@@ -17,6 +17,28 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+
+  {
+    id: 'ak',
+    title: 'AK Lights and Sounds',
+    year: '2026',
+    shortDescription: 'Event rental and booking management platform for a local lights and sounds business.',
+    fullDescription:
+      'A booking and event management platform designed for AK Lights and Sounds, an event rental business offering lights and sound systems, karaoke, and 360 booth services. The system centralizes client records, event bookings, services, payments, and schedules into one platform, with a public-facing website for inquiries and business showcasing.',
+    features: [
+      'Public-facing landing page and service showcase',
+      'Event inquiry and booking management',
+      'Client and booking records',
+      'Calendar-based event scheduling',
+      'Service and package management',
+      'Payment and balance tracking',
+    ],
+    tech: ['Next.js', 'React', 'TypeScript', 'Prisma', 'MySQL', 'Tailwind CSS'],
+    accentColor: '#6ee7b7',
+    github: 'https://github.com/hanznikkol/aklightsandsounds',
+    status: 'developing',
+    preview: '/gallery/projects/AK/AK-preview.png'
+  },
   {
     id: 'spontee',
     title: 'Spontee',
