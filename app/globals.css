@@ -8,6 +8,12 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface-base: #080808;
+  --color-surface-1: #0b0b0b;
+  --color-surface-2: #0e0e0e;
+  --color-surface-3: #111111;
+  --color-surface-4: #121212;
+  --color-surface-5: #0d0d0d;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -23,11 +29,6 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  @apply text-white;
 } 
 
 /* Custom Scrollbar */

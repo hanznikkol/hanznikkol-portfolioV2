@@ -1,5 +1,4 @@
 'use client'
-
 import { useState } from "react"
 import { skills } from "@/data/skills"
 import { Icon } from "@iconify/react"

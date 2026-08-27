@@ -1,5 +1,3 @@
-'use client'
-
 import { skills } from "@/data/skills"
 import { Icon } from "@iconify/react"
 import { X } from "lucide-react"

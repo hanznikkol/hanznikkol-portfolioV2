@@ -1,5 +1,3 @@
-'use client'
-
 import ExperienceContent from '../modals/ExperienceContent'
 
 interface ExperienceModalProps {
