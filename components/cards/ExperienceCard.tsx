@@ -27,7 +27,7 @@ export default function ExperienceModal({ open, onClose }: ExperienceModalProps)
           flex flex-col
           rounded-t-2xl sm:rounded-2xl
           border border-white/10
-          bg-[#111111]
+          bg-surface-3
         "
       >
 

@@ -42,7 +42,7 @@ function FloatingChat() {
     } catch (err: unknown) {
       setMessages(prev => [
         ...prev,
-        { role: 'me', text: "Something went wrong 😅" }
+        { role: 'me', text: "Something went wrong " }
       ])
     }
 
@@ -79,7 +79,7 @@ function FloatingChat() {
 
       {/* Chat Window */}
       {open && (
-        <div className="fixed bottom-24 right-6 z-50 flex w-80 sm:w-96 flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0b0b0b]/90 shadow-2xl backdrop-blur-xl">
+        <div className="fixed bottom-24 right-6 z-50 flex w-80 sm:w-96 flex-col overflow-hidden rounded-2xl border border-white/10 bg-surface-1/90 shadow-2xl backdrop-blur-xl">
 
           {/* HEADER */}
           <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">

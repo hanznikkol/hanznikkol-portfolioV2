@@ -13,7 +13,7 @@ export default function ExperienceContent() {
           <div key={i} className="relative pl-8">
 
             {/* DOT */}
-            <div className="absolute left-0 top-1 h-3 w-3 rounded-full bg-blue-500 ring-4 ring-[#111111]" />
+            <div className="absolute left-0 top-1 h-3 w-3 rounded-full bg-blue-500 ring-4 ring-surface-3" />
 
             {/* HEADER */}
             <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
@@ -34,7 +34,7 @@ export default function ExperienceContent() {
             </p>
 
             {/* DESCRIPTION CARD FEEL */}
-            <div className="mt-3 rounded-xl border border-white/10 bg-white/[0.03] p-3 sm:p-4">
+            <div className="mt-3 rounded-xl border border-white/10 bg-white/3 p-3 sm:p-4">
               <p className="text-xs sm:text-sm leading-relaxed text-white/60">
                 {item.description}
               </p>

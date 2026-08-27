@@ -21,7 +21,7 @@ export default function SkillsModal({
       />
 
       {/* modal box */}
-      <div className="relative w-full m-4 md:m-0 md:max-w-2xl rounded-2xl border border-white/10 bg-[#111111] p-6">
+      <div className="relative w-full m-4 md:m-0 md:max-w-2xl rounded-2xl border border-white/10 bg-surface-3 p-6">
 
         {/* header */}
         <div className="flex items-center justify-between">

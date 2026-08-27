@@ -35,7 +35,7 @@ export default function SkillsCard() {
 
   return (
     <>
-      <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-[#111111] p-6 select-none">
+      <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-surface-3 p-6 select-none">
 
         {/* header */}
         <div className="flex items-center justify-between">

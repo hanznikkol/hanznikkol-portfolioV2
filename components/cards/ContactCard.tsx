@@ -15,7 +15,7 @@ export default function ContactCard() {
   ]
 
   return (
-    <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-[#111111] p-6 w-full">
+    <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-surface-3 p-6 w-full">
 
       {/* MAIN LAYOUT */}
       <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr_0.9fr]">

@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Globe, ArrowUpRight, Sparkles, Layers3, Wrench, CalendarDays, CircleDot, Rocket, ShieldAlert, ImageIcon, X } from 'lucide-react'
+import { Globe, ArrowUpRight, Sparkles, Layers3, Wrench, ShieldAlert, ImageIcon} from 'lucide-react'
 import GithubIcon from '@iconify-react/mdi/github';
 import FigmaIcon from '@iconify-react/devicon/figma'
 import type { Project } from '@/data/projects'
@@ -18,7 +18,7 @@ interface ProjectModalProps {
 export default function ProjectModal({ project, open, onOpenChange }: ProjectModalProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="no-scrollbar max-h-[92vh] overflow-y-auto overflow-x-hidden border border-white/10 bg-[#0b0b0b] p-0 text-white shadow-2xl shadow-black/40 sm:max-w-4xl">
+      <DialogContent className="no-scrollbar max-h-[92vh] overflow-y-auto overflow-x-hidden border border-white/10 bg-surface-1 p-0 text-white shadow-2xl shadow-black/40 sm:max-w-4xl">
         {/* Gradient background */}
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
           <div className="absolute -right-30 -top-24 h-72 w-72 rounded-full blur-3xl" style={{ background: `${project.accentColor}25` }}/>
@@ -29,7 +29,7 @@ export default function ProjectModal({ project, open, onOpenChange }: ProjectMod
           <div className="relative h-80 w-full overflow-hidden border-b border-white/10">
             {/* Background Overlay */}
             <Image src={project.preview} alt={project.title} fill priority className="object-cover" />
-            <div className="absolute inset-0 bg-linear-to-t from-[#0b0b0b] via-black/40 to-black/10" />
+            <div className="absolute inset-0 bg-linear-to-t from-surface-1 via-black/40 to-black/10" />
             <div className="absolute -bottom-16 right-0 h-56 w-56 rounded-full blur-3xl" style={{ background: `${project.accentColor}50` }} />
 
             {/* Main Header */}
@@ -173,7 +173,7 @@ export default function ProjectModal({ project, open, onOpenChange }: ProjectMod
 
                 <div className="grid gap-3 sm:grid-cols-2">
                   {project.features.map((feature, i) => (
-                    <div key={i} className="group flex items-start gap-3 rounded-2xl border border-white/5 bg-black/20 p-4 transition-all hover:border-white/10 hover:bg-white/[0.04]">
+                    <div key={i} className="group flex items-start gap-3 rounded-2xl border border-white/5 bg-black/20 p-4 transition-all hover:border-white/10 hover:bg-white/4">
                       <div className="mt-1 h-2 w-2 rounded-full" style={{ background: project.accentColor }} />
                       <p className="text-sm leading-relaxed text-white/65 transition-colors group-hover:text-white/90">{feature}</p>
                     </div>
@@ -186,7 +186,7 @@ export default function ProjectModal({ project, open, onOpenChange }: ProjectMod
 
             {/* Challenges */}
             {project.challenges && (
-              <section className="rounded-3xl border border-orange-500/10 bg-orange-500/[0.03] p-5">
+              <section className="rounded-3xl border border-orange-500/10 bg-orange-500/3 p-5">
                 <div className="mb-3 flex items-center gap-2">
                   <ShieldAlert className="h-4 w-4 text-orange-300" />
                   <h3 className="font-medium text-white">Challenges</h3>
@@ -205,7 +205,7 @@ export default function ProjectModal({ project, open, onOpenChange }: ProjectMod
 
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((tech) => (
-                  <Badge key={tech} className="rounded-xl border border-white/10 bg-white/4 px-3 py-1 text-xs font-medium text-white/70 transition-all hover:border-white/20 hover:bg-white/[0.08] hover:text-white">
+                  <Badge key={tech} className="rounded-xl border border-white/10 bg-white/4 px-3 py-1 text-xs font-medium text-white/70 transition-all hover:border-white/20 hover:bg-white/8 hover:text-white">
                     <Wrench className="mr-1.5 h-3 w-3 opacity-60" />
                     {tech}
                   </Badge>
